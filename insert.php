@@ -1,8 +1,8 @@
  <?php
-$servername = "localhost";
-$username = "root";
-$password = "test";
-$dbname = "stage";
+$servername = "10.69.8.55";
+$username = "bouchra";
+$password = "bouchra";
+$dbname = "stageprod";
 
 // Create connection
 $conn = new mysqli($servername, $username, $password, $dbname);
@@ -12,9 +12,14 @@ if ($conn->connect_error) {
 }
 
 
+$Xnom=$_POST['nom'];
+$Xprenom=$_POST['prenom'];
 
-$sql = "INSERT INTO stagiaire (id,nom,prenom) VALUES ('', 'xx','yy')";
 
+
+$sql = "INSERT INTO stagiaire (nom,prenom) VALUES ('$Xnom', '$Xprenom')";
+echo $sql;
+//$sql="INSERT INTO stagiaire SET $nom, $prenom ;";
 if ($conn->query($sql) === TRUE) {
     echo "New record created successfully";
 } else {
@@ -25,3 +30,16 @@ if ($conn->query($sql) === TRUE) {
 
 $conn->close();
 ?>
+
+
+
+ 
+
+
+
+ 
+
+
+
+
+
